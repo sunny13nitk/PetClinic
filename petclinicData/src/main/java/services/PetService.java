@@ -1,21 +1,8 @@
 package services;
 
-import java.util.List;
-
 import model.Pet;
 
-public interface PetService
+public interface PetService extends CrudService<Pet, Long>
 {
 	
-	List<Pet> findAll(
-	        Long id
-	);
-	
-	Pet findbyId(
-	        long id
-	);
-	
-	Pet save(
-	        Pet pet
-	);
 }

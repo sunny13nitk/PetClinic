@@ -4,20 +4,9 @@ import java.util.List;
 
 import model.Owner;
 
-public interface OwnerService
+public interface OwnerService extends CrudService<Owner, Long>
 {
 	List<Owner> findByLastName(
 	);
 	
-	List<Owner> findAll(
-	        Long id
-	);
-	
-	Owner findbyId(
-	        long id
-	);
-	
-	Owner save(
-	        Owner owner
-	);
 }
