@@ -1,5 +1,6 @@
 package petClinic.services.map;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -17,7 +18,7 @@ public abstract class AbstractMapService<T, ID> implements CrudService<T, ID>
 	public List<T> findAll(
 	)
 	{
-		return (List<T>) map.values();
+		return new ArrayList<T>(map.values());
 	}
 	
 	public T findById(
