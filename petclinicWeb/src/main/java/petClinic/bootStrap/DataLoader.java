@@ -1,15 +1,18 @@
-package petclinicWeb.bootStrap;
+package petClinic.bootStrap;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-import model.Owner;
-import model.Vet;
-import services.OwnerService;
-import services.VetService;
-import services.map.OwnerServiceMap;
-import services.map.VetServiceMap;
+import petClinic.model.Owner;
+import petClinic.model.Vet;
+import petClinic.services.OwnerService;
+import petClinic.services.VetService;
 
+/*
+ * Data Loader Class create under petClinic package as this is the main package
+ * inside which the MainApplication resides. so the Component scan picks this up implicitly
+ */
 @Component
 public class DataLoader implements CommandLineRunner
 {
@@ -17,13 +20,14 @@ public class DataLoader implements CommandLineRunner
 	private final OwnerService ownerSrv;
 	private final VetService   vetSrv;
 	
+	@Autowired
 	public DataLoader(
-	    // OwnerService ownerSrv, PetService petSrv
+	        OwnerService ownerSrv, VetService vetSrv
 	)
 	{
-		// currently Instantiated - Will be Injected Later depending on Profile
-		this.ownerSrv = (OwnerService) new OwnerServiceMap();
-		this.vetSrv   = (VetService) new VetServiceMap();
+		super();
+		this.ownerSrv = ownerSrv;
+		this.vetSrv   = vetSrv;
 	}
 	
 	@Override

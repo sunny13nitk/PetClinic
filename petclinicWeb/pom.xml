@@ -7,14 +7,15 @@
 		<artifactId>petclinic</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>petclinicWeb</artifactId>
-	<name>petclinicWeb</name>
-	<description>petclinicWeb</description>
+	<artifactId>petClinic</artifactId>
+	<name>petClinic</name>
+	<description>petClinic</description>
 
 	<dependencies>
+		<!-- petClinicData added as a dependency - Jar will be loaded -->
 		<dependency>
 			<groupId>sb.spboot</groupId>
-			<artifactId>petclinicData</artifactId>
+			<artifactId>datamodel</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 

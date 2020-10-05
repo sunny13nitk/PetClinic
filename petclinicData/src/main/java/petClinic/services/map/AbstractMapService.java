@@ -1,10 +1,10 @@
-package services.map;
+package petClinic.services.map;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import services.CrudService;
+import petClinic.services.CrudService;
 
 /*
  * Abstract Class that Implements CrudService Interface

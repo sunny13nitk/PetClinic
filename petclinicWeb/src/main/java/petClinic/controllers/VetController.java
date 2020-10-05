@@ -1,19 +1,20 @@
-package petclinicWeb.controllers;
+package petClinic.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/owners")
-public class OwnerController
+@RequestMapping("/vets")
+public class VetController
 {
-	private final String ownerList = "owners/list";
+	private final String vetList = "vets/list";
 	
 	@GetMapping("/list")
-	public String getOwnersList(
+	public String getVetsList(
 	)
 	{
-		return ownerList;
+		
+		return vetList;
 	}
 }

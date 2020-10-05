@@ -1,4 +1,4 @@
-package services;
+package petClinic.services;
 
 import java.util.List;
 

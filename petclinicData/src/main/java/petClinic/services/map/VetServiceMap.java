@@ -1,9 +1,9 @@
-package services.map;
+package petClinic.services.map;
 
 import org.springframework.stereotype.Service;
 
-import model.Vet;
-import services.VetService;
+import petClinic.model.Vet;
+import petClinic.services.VetService;
 
 @Service
 public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService
