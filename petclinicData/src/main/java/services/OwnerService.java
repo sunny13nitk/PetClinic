@@ -7,6 +7,7 @@ import model.Owner;
 public interface OwnerService extends CrudService<Owner, Long>
 {
 	List<Owner> findByLastName(
+	        String lastName
 	);
 	
 }
