@@ -15,7 +15,7 @@ public class PetServiceMap extends AbstractMapService<Pet, Long> implements PetS
 	)
 	{
 		
-		return super.save(object.getId(), object);
+		return super.save(object);
 	}
 	
 }
