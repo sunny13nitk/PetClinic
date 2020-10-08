@@ -9,9 +9,11 @@ import org.springframework.stereotype.Component;
 import petClinic.model.Owner;
 import petClinic.model.Pet;
 import petClinic.model.PetType;
+import petClinic.model.Speciality;
 import petClinic.model.Vet;
 import petClinic.services.OwnerService;
 import petClinic.services.PetTypeService;
+import petClinic.services.SpecialityService;
 import petClinic.services.VetService;
 
 /*
@@ -22,19 +24,21 @@ import petClinic.services.VetService;
 public class DataLoader implements CommandLineRunner
 {
 	
-	private final OwnerService   ownerSrv;
-	private final VetService     vetSrv;
-	private final PetTypeService petTypeSrv;
+	private final OwnerService      ownerSrv;
+	private final VetService        vetSrv;
+	private final PetTypeService    petTypeSrv;
+	private final SpecialityService specialitySrv;
 	
 	@Autowired
 	public DataLoader(
-	        OwnerService ownerSrv, VetService vetSrv, PetTypeService petTypeSrv
+	        OwnerService ownerSrv, VetService vetSrv, PetTypeService petTypeSrv, SpecialityService specialitySrv
 	)
 	{
 		super();
-		this.ownerSrv   = ownerSrv;
-		this.vetSrv     = vetSrv;
-		this.petTypeSrv = petTypeSrv;
+		this.ownerSrv      = ownerSrv;
+		this.vetSrv        = vetSrv;
+		this.petTypeSrv    = petTypeSrv;
+		this.specialitySrv = specialitySrv;
 	}
 	
 	@Override
@@ -42,7 +46,14 @@ public class DataLoader implements CommandLineRunner
 	        String... args
 	) throws Exception
 	{
+		if (petTypeSrv.findAll().size() == 0)
+			loadData();
 		
+	}
+	
+	private void loadData(
+	)
+	{
 		PetType ptypeDog      = new PetType("dog");
 		PetType ptypeDogSaved = petTypeSrv.save(ptypeDog);
 		
@@ -87,18 +98,28 @@ public class DataLoader implements CommandLineRunner
 		
 		System.out.println("Owners Loaded ....");
 		
+		Speciality surgery = new Speciality();
+		surgery.setDescription("Surgery");
+		Speciality savedSurgery = specialitySrv.save(surgery);
+		
+		Speciality dentistry = new Speciality();
+		dentistry.setDescription("Dentist");
+		Speciality savedDentisrty = specialitySrv.save(dentistry);
+		
 		Vet vet1 = new Vet();
 		vet1.setFirstName("Suneet");
 		vet1.setLastName("Singla");
+		vet1.getSpecialities().add(savedSurgery);
+		
 		vetSrv.save(vet1);
 		
 		Vet vet2 = new Vet();
 		vet2.setFirstName("Himani");
 		vet2.setLastName("Chaudhary");
+		vet2.getSpecialities().add(savedDentisrty);
 		vetSrv.save(vet2);
 		
 		System.out.println("Vets Loaded ....");
-		
 	}
 	
 }

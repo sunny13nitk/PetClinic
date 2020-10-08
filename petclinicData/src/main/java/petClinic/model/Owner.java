@@ -69,8 +69,7 @@ public class Owner extends Person
 	public Owner(
 	)
 	{
-		super();
-		// TODO Auto-generated constructor stub
+		this.pets = new ArrayList<Pet>();
 	}
 	
 	public Owner(
