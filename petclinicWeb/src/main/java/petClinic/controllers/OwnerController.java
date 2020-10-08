@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import petClinic.services.OwnerService;
 
 @Controller
-@RequestMapping("owners")
+@RequestMapping("/owners")
 public class OwnerController
 {
 	private final String ownerList = "owners/list";
