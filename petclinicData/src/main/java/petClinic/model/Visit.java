@@ -1,6 +1,6 @@
 package petClinic.model;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class Visit extends BaseEntity
 {
