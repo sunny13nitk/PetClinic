@@ -4,9 +4,23 @@ import java.util.Date;
 
 public class Pet extends BaseEntity
 {
-	private String name;
-	private Date   dob;
-	private Owner  owner;
+	private String  name;
+	private Date    dob;
+	private Owner   owner;
+	private PetType petType;
+	
+	public PetType getPetType(
+	)
+	{
+		return petType;
+	}
+	
+	public void setPetType(
+	        PetType petType
+	)
+	{
+		this.petType = petType;
+	}
 	
 	public String getName(
 	)
