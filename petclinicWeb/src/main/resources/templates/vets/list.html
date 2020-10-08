@@ -1,18 +1,19 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymleaf.org">
+<html xmlns:th="http://www.thymleaf.org"
+		th:replace="~{fragments/layout :: layout (~{::body},'vets')}">
 <head>
 <meta charset="ISO-8859-1">
 <title>Pet Clinic Application</title>
 </head>
 <body>
-		<h1>List of Vets</h1>
+		<h1>Vets</h1>
 
-		<table>
+		<table id="vets" class="table table-striped">
 				<thead>
 						<tr>
-								<th>Id</th>
-								<th>First Name</th>
-								<th>Last Name</th>
+								<th style="width: 120px">Id</th>
+								<th style="width: 150px">First Name</th>
+								<th style="width: 150px">Last Name</th>
 						</tr>
 				</thead>
 
