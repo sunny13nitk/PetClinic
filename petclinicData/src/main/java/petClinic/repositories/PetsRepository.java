@@ -19,7 +19,7 @@ public interface PetsRepository extends JpaRepository<Pet, Long>
 	        String petType
 	);
 	
-	public List<Pet> findAllByOwnerFirstNameAndLastNameIgnoreCase(
+	public List<Pet> findAllByOwnerFirstnameAndOwnerLastname(
 	        String OwnerFname, String OwnerLname
 	);
 }

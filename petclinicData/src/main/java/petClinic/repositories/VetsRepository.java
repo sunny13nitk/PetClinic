@@ -10,7 +10,7 @@ import petClinic.model.Vet;
 @Repository
 public interface VetsRepository extends JpaRepository<Vet, Long>
 {
-	public List<Vet> findAllByFirstNameAndLastName(
+	public List<Vet> findAllByFirstnameAndLastname(
 	        String firstName, String lastName
 	);
 	

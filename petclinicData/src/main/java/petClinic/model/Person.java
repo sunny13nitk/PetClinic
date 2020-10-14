@@ -1,38 +1,41 @@
 package petClinic.model;
 
+import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
 
 @MappedSuperclass
 public class Person extends BaseEntity
 {
-	private String firstName;
+	@Column
+	private String firstname;
 	
-	private String lastName;
+	@Column
+	private String lastname;
 	
-	public String getFirstName(
+	public String getFirstname(
 	)
 	{
-		return firstName;
+		return firstname;
 	}
 	
-	public void setFirstName(
+	public void setFirstname(
 	        String firstName
 	)
 	{
-		this.firstName = firstName;
+		this.firstname = firstName;
 	}
 	
-	public String getLastName(
+	public String getLastname(
 	)
 	{
-		return lastName;
+		return lastname;
 	}
 	
-	public void setLastName(
+	public void setLastname(
 	        String lastName
 	)
 	{
-		this.lastName = lastName;
+		this.lastname = lastName;
 	}
 	
 	public Person(
@@ -40,8 +43,8 @@ public class Person extends BaseEntity
 	)
 	{
 		super();
-		this.firstName = firstName;
-		this.lastName  = lastName;
+		this.firstname = firstName;
+		this.lastname  = lastName;
 	}
 	
 	public Person(

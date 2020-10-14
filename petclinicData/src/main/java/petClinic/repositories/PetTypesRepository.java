@@ -10,7 +10,7 @@ import petClinic.model.PetType;
 @Repository
 public interface PetTypesRepository extends JpaRepository<PetType, Long>
 {
-	public List<PetType> findAllbyNameIgnoreCase(
-	        String name
+	public List<PetType> findAllByNameIgnoreCase(
+	        String pettype
 	);
 }

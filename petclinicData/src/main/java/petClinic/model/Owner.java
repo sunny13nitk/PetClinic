@@ -3,8 +3,6 @@ package petClinic.model;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.AttributeOverride;
-import javax.persistence.AttributeOverrides;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -15,10 +13,6 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "owners")
-@AttributeOverrides(
-    { @AttributeOverride(name = "first_name", column = @Column(name = "firstName")),
-            @AttributeOverride(name = "last_name", column = @Column(name = "lastName")) }
-)
 public class Owner extends Person
 {
 	@Column(name = "address")

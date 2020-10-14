@@ -6,7 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import petClinic.services.VetService;
+import petClinic.repositories.VetsRepository;
 
 @Controller
 @RequestMapping("/vets")
@@ -14,11 +14,11 @@ public class VetController
 {
 	private final String vetList = "vets/list";
 	
-	private final VetService vetSrv;
+	private final VetsRepository vetSrv;
 	
 	@Autowired
 	public VetController(
-	        VetService vetSrv
+	        VetsRepository vetSrv
 	)
 	{
 		super();

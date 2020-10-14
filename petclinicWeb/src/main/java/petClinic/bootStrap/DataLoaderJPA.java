@@ -12,30 +12,29 @@ import petClinic.model.Pet;
 import petClinic.model.PetType;
 import petClinic.model.Speciality;
 import petClinic.model.Vet;
-import petClinic.services.OwnerService;
-import petClinic.services.PetTypeService;
-import petClinic.services.SpecialityService;
-import petClinic.services.VetService;
+import petClinic.repositories.OwnersRepository;
+import petClinic.repositories.PetTypesRepository;
+import petClinic.repositories.SpecialitiesRepository;
+import petClinic.repositories.VetsRepository;
 
 /*
  * Data Loader Class create under petClinic package as this is the main package
  * inside which the MainApplication resides. so the Component scan picks this up implicitly
  */
 @Component
-@Profile(
-    { "default", "map" }
-)
-public class DataLoader implements CommandLineRunner
+@Profile("springDataJPA")
+public class DataLoaderJPA implements CommandLineRunner
 {
 	
-	private final OwnerService      ownerSrv;
-	private final VetService        vetSrv;
-	private final PetTypeService    petTypeSrv;
-	private final SpecialityService specialitySrv;
+	private final OwnersRepository       ownerSrv;
+	private final VetsRepository         vetSrv;
+	private final PetTypesRepository     petTypeSrv;
+	private final SpecialitiesRepository specialitySrv;
 	
 	@Autowired
-	public DataLoader(
-	        OwnerService ownerSrv, VetService vetSrv, PetTypeService petTypeSrv, SpecialityService specialitySrv
+	public DataLoaderJPA(
+	        OwnersRepository ownerSrv, VetsRepository vetSrv, PetTypesRepository petTypeSrv,
+	        SpecialitiesRepository specialitySrv
 	)
 	{
 		super();
@@ -124,6 +123,8 @@ public class DataLoader implements CommandLineRunner
 		vetSrv.save(vet2);
 		
 		System.out.println("Vets Loaded ....");
+		
+		System.out.println("Inside SD JPA Proile");
 	}
 	
 }

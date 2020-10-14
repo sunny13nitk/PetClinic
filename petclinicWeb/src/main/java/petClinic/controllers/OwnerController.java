@@ -6,7 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import petClinic.services.OwnerService;
+import petClinic.repositories.OwnersRepository;
 
 @Controller
 @RequestMapping("/owners")
@@ -14,11 +14,11 @@ public class OwnerController
 {
 	private final String ownerList = "owners/list";
 	
-	private final OwnerService ownerSrv;
+	private final OwnersRepository ownerSrv;
 	
 	@Autowired
 	public OwnerController(
-	        OwnerService ownerSrv
+	        OwnersRepository ownerSrv
 	)
 	{
 		this.ownerSrv = ownerSrv;
