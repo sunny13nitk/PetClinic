@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClassDiagram>
+    <Class name="petClinic.model.Owner" x="267" y="271">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="petClinic.model.Person"/>
+        <Association destinationClassName="petClinic.model.Pet"
+            endpointName="pets" kind="Simple"/>
+        <Communication destinationClassName="petClinic.model.Pet"/>
+    </Class>
+    <Class name="petClinic.model.Vet" x="741" y="322">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="petClinic.model.Person"/>
+        <Association destinationClassName="petClinic.model.Speciality"
+            endpointName="specialities" kind="Simple"/>
+    </Class>
+    <Class name="petClinic.model.PetType" x="962" y="58">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="petClinic.model.BaseEntity"/>
+    </Class>
+    <Class name="petClinic.model.Speciality" x="983" y="452">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="petClinic.model.BaseEntity"/>
+    </Class>
+    <Class name="petClinic.model.Pet" x="277" y="27">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="petClinic.model.BaseEntity"/>
+        <Association destinationClassName="petClinic.model.Owner"
+            endpointName="owner" kind="Simple"/>
+        <Association destinationClassName="petClinic.model.Visit"
+            endpointName="visits" kind="Simple"/>
+        <Association destinationClassName="petClinic.model.PetType"
+            endpointName="petType" kind="Simple"/>
+        <Communication destinationClassName="petClinic.model.Visit"/>
+    </Class>
+    <Class name="petClinic.model.Person" x="555" y="127">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="petClinic.model.BaseEntity"/>
+    </Class>
+    <Class name="petClinic.model.Visit" x="600" y="525">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="petClinic.model.BaseEntity"/>
+        <Association destinationClassName="petClinic.model.Pet"
+            endpointName="pet" kind="Simple"/>
+    </Class>
+    <Class name="petClinic.model.BaseEntity" x="588" y="11">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+</ClassDiagram>
