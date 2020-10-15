@@ -24,4 +24,8 @@ public interface OwnersRepository extends JpaRepository<Owner, Long>
 	public List<Owner> findAllByCityContains(
 	        String city
 	);
+	
+	public List<Owner> findAllByLastnameIgnoreCase(
+	        String lastname
+	);
 }
