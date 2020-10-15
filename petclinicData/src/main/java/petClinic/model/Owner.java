@@ -9,10 +9,18 @@ import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 /*Owner POJO
  */
 @Entity
 @Table(name = "owners")
+@Getter
+@Setter
+@NoArgsConstructor
+
 public class Owner extends Person
 {
 	@Column(name = "address")
@@ -23,72 +31,7 @@ public class Owner extends Person
 	private String telephone;
 	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
-	private List<Pet> pets;
-	
-	public String getAddress(
-	)
-	{
-		return address;
-	}
-	
-	public void setAddress(
-	        String address
-	)
-	{
-		this.address = address;
-	}
-	
-	public String getCity(
-	)
-	{
-		return city;
-	}
-	
-	public void setCity(
-	        String city
-	)
-	{
-		this.city = city;
-	}
-	
-	public String getTelephone(
-	)
-	{
-		return telephone;
-	}
-	
-	public void setTelephone(
-	        String telephone
-	)
-	{
-		this.telephone = telephone;
-	}
-	
-	public List<Pet> getPets(
-	)
-	{
-		return pets;
-	}
-	
-	public void setPets(
-	        List<Pet> pets
-	)
-	{
-		this.pets = pets;
-	}
-	
-	public Owner(
-	)
-	{
-		this.pets = new ArrayList<Pet>();
-	}
-	
-	public Owner(
-	        String firstName, String lastName
-	)
-	{
-		this.pets = new ArrayList<Pet>();
-	}
+	private List<Pet> pets = new ArrayList<Pet>();
 	
 	/*
 	 * Convenience Method to Add a Pet

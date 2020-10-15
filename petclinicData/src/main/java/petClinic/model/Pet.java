@@ -12,8 +12,17 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 @Entity
 @Table(name = "pets")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Pet extends BaseEntity
 {
 	@Column(name = "name")
@@ -30,97 +39,6 @@ public class Pet extends BaseEntity
 	
 	@OneToMany(mappedBy = "pet", cascade = CascadeType.ALL)
 	private List<Visit> visits = new ArrayList<Visit>();
-	
-	public List<Visit> getVisits(
-	)
-	{
-		return visits;
-	}
-	
-	public void setVisits(
-	        List<Visit> visits
-	)
-	{
-		this.visits = visits;
-	}
-	
-	public PetType getPetType(
-	)
-	{
-		return petType;
-	}
-	
-	public void setPetType(
-	        PetType petType
-	)
-	{
-		this.petType = petType;
-	}
-	
-	public String getName(
-	)
-	{
-		return name;
-	}
-	
-	public void setName(
-	        String name
-	)
-	{
-		this.name = name;
-	}
-	
-	public Date getDob(
-	)
-	{
-		return dob;
-	}
-	
-	public void setDob(
-	        Date dob
-	)
-	{
-		this.dob = dob;
-	}
-	
-	public Owner getOwner(
-	)
-	{
-		return owner;
-	}
-	
-	public void setOwner(
-	        Owner owner
-	)
-	{
-		this.owner = owner;
-	}
-	
-	public Pet(
-	        String name, Date dob, Owner owner
-	)
-	{
-		super();
-		this.name  = name;
-		this.dob   = dob;
-		this.owner = owner;
-	}
-	
-	public Pet(
-	        String name, Date dob
-	)
-	{
-		super();
-		this.name = name;
-		this.dob  = dob;
-	}
-	
-	public Pet(
-	)
-	{
-		super();
-		// TODO Auto-generated constructor stub
-	}
 	
 	/*
 	 * Convenience Method to Add Visit for Pet
